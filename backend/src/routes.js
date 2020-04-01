@@ -2,10 +2,8 @@ const express = require('express');
 
 const OngController = require('./controllers/OngController');
 const IncidentsController = require('./controllers/IncidentsController');
-const ProfireController = require('./controllers/ProfireController');
+const ProfileController = require('./controllers/ProfileController');
 const SessionController = require('./controllers/SessionController');
-
-const connection = require('./database/connection');
 
 const routes = express.Router();
 
@@ -29,7 +27,7 @@ routes.get('/ongs', OngController.index);
 //Criar uma ong
 routes.post('/ongs', OngController.create);
 //Buscar todos incidentes da ong logada
-routes.get('/profire',ProfireController.index);
+routes.get('/profile',ProfileController.index);
 
 //Criando uma rota para listar incidents
 routes.get('/incidents', IncidentsController.index);
@@ -37,7 +35,5 @@ routes.get('/incidents', IncidentsController.index);
 routes.post('/incidents', IncidentsController.create);
 //deletar incident
 routes.delete('/incidents/:id', IncidentsController.delete);
-
-
 
 module.exports = routes;

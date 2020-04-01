@@ -4,10 +4,10 @@ module.exports = {
 
     async index (request,response){
         //criar um esquema de paginação para não retornar todos os dados de uma só vez
-        const { page = 1 } = request.query;
+        const {page = 1} = request.query;
 
         //retornar a quantidade de dados
-        const [ count ] = await connection('incidents').count();
+        const [count] = await connection('incidents').count();
        
         const incidents = await connection('incidents')
         //Pegando dados da ong tambem
